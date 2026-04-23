@@ -3,7 +3,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+// تعریف تابع log (حل مشکل undefined function)
+if ( ! function_exists( 'wsc_log_to_db' ) ) {
+    function wsc_log_to_db( $message ) {
+        error_log( '[Snapp Connector] ' . $message );
+    }
+}
 /**
  * [نسخه 1.0.21] - جداسازی منطق POST به admin_init
  */
